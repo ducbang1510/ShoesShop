@@ -16,5 +16,10 @@ namespace ShoesShop
         {
             InitializeComponent();
         }
+
+        private void FChiTietHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,7 +35,9 @@
             this.donGiaLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtMaDH = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtTenGiay = new System.Windows.Forms.TextBox();
             this.dtpNgayDonHang = new System.Windows.Forms.DateTimePicker();
@@ -50,17 +52,16 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.gVCTDH = new System.Windows.Forms.DataGridView();
+            this.dGVCTDH = new System.Windows.Forms.DataGridView();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
-            this.txtMaDH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btDatHang = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gVCTDH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVCTDH)).BeginInit();
             this.SuspendLayout();
             // 
             // maDonHangLabel
@@ -126,12 +127,22 @@
             this.groupBox1.Controls.Add(this.soLuongLabel);
             this.groupBox1.Controls.Add(this.donGiaLabel);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 189);
+            this.groupBox1.Location = new System.Drawing.Point(21, 164);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 112);
+            this.groupBox1.Size = new System.Drawing.Size(693, 110);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ShoesShop.Properties.Resources.bill;
+            this.pictureBox1.Location = new System.Drawing.Point(578, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // txtSoLuong
             // 
@@ -140,6 +151,14 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(179, 24);
             this.txtSoLuong.TabIndex = 12;
+            // 
+            // txtMaDH
+            // 
+            this.txtMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDH.Location = new System.Drawing.Point(120, 38);
+            this.txtMaDH.Name = "txtMaDH";
+            this.txtMaDH.Size = new System.Drawing.Size(180, 24);
+            this.txtMaDH.TabIndex = 11;
             // 
             // txtGia
             // 
@@ -244,16 +263,16 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // gVCTDH
+            // dGVCTDH
             // 
-            this.gVCTDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gVCTDH.Location = new System.Drawing.Point(21, 366);
-            this.gVCTDH.Margin = new System.Windows.Forms.Padding(2);
-            this.gVCTDH.Name = "gVCTDH";
-            this.gVCTDH.RowHeadersWidth = 62;
-            this.gVCTDH.RowTemplate.Height = 28;
-            this.gVCTDH.Size = new System.Drawing.Size(693, 199);
-            this.gVCTDH.TabIndex = 0;
+            this.dGVCTDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVCTDH.Location = new System.Drawing.Point(21, 366);
+            this.dGVCTDH.Margin = new System.Windows.Forms.Padding(2);
+            this.dGVCTDH.Name = "dGVCTDH";
+            this.dGVCTDH.RowHeadersWidth = 62;
+            this.dGVCTDH.RowTemplate.Height = 28;
+            this.dGVCTDH.Size = new System.Drawing.Size(693, 199);
+            this.dGVCTDH.TabIndex = 0;
             // 
             // btXoa
             // 
@@ -261,7 +280,7 @@
             this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btXoa.Location = new System.Drawing.Point(606, 316);
+            this.btXoa.Location = new System.Drawing.Point(621, 294);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(93, 36);
             this.btXoa.TabIndex = 5;
@@ -274,7 +293,7 @@
             this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btSua.Location = new System.Drawing.Point(485, 316);
+            this.btSua.Location = new System.Drawing.Point(500, 294);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(93, 36);
             this.btSua.TabIndex = 4;
@@ -287,38 +306,20 @@
             this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThem.Location = new System.Drawing.Point(363, 316);
+            this.btThem.Location = new System.Drawing.Point(378, 294);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(93, 36);
             this.btThem.TabIndex = 3;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = false;
             // 
-            // txtMaDH
-            // 
-            this.txtMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDH.Location = new System.Drawing.Point(120, 38);
-            this.txtMaDH.Name = "txtMaDH";
-            this.txtMaDH.Size = new System.Drawing.Size(180, 24);
-            this.txtMaDH.TabIndex = 11;
-            // 
             // label2
             // 
             this.label2.Image = global::ShoesShop.Properties.Resources.logo3;
             this.label2.Location = new System.Drawing.Point(370, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(344, 188);
+            this.label2.Size = new System.Drawing.Size(344, 152);
             this.label2.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ShoesShop.Properties.Resources.bill;
-            this.pictureBox1.Location = new System.Drawing.Point(578, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -326,22 +327,36 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 342);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 18);
+            this.label3.Size = new System.Drawing.Size(152, 18);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Thông tin chi tiết hóa đơn:";
+            this.label3.Text = "Thông tin đặt hàng:";
+            // 
+            // btDatHang
+            // 
+            this.btDatHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btDatHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDatHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btDatHang.Location = new System.Drawing.Point(605, 582);
+            this.btDatHang.Name = "btDatHang";
+            this.btDatHang.Size = new System.Drawing.Size(109, 61);
+            this.btDatHang.TabIndex = 3;
+            this.btDatHang.Text = "Đặt hàng";
+            this.btDatHang.UseVisualStyleBackColor = false;
             // 
             // FChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(730, 577);
+            this.ClientSize = new System.Drawing.Size(766, 655);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
+            this.Controls.Add(this.btDatHang);
             this.Controls.Add(this.btThem);
-            this.Controls.Add(this.gVCTDH);
+            this.Controls.Add(this.dGVCTDH);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -350,11 +365,12 @@
             this.MinimizeBox = false;
             this.Name = "FChiTietHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết hóa đơn";
+            this.Text = "Đặt Hàng";
+            this.Load += new System.EventHandler(this.FChiTietHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gVCTDH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVCTDH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +399,7 @@
         private System.Windows.Forms.TextBox txtTenGiay;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtGia;
-        private System.Windows.Forms.DataGridView gVCTDH;
+        private System.Windows.Forms.DataGridView dGVCTDH;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
@@ -391,5 +407,6 @@
         private System.Windows.Forms.TextBox txtMaDH;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btDatHang;
     }
 }

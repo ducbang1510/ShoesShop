@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_DonHang.cs" />
+    <Compile Include="BUS\BUS_Giay.cs" />
+    <Compile Include="BUS\BUS_KhachHang.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DAO_DonHang.cs" />
+    <Compile Include="DAO\DAO_Giay.cs" />
+    <Compile Include="DAO\DAO_KhachHang.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +109,35 @@
     <Compile Include="FQuanLyNhanVien.Designer.cs">
       <DependentUpon>FQuanLyNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Detail.cs">
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sho.cs">
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoesShopDBEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoesShopDBEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoesShopDBEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoesShopDBEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoesShopDBEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FChiTietHoaDon.resx">
       <DependentUpon>FChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +164,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,6 +179,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="ShoesShopDBEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShoesShopDBEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ShoesShopDBEntity.edmx.diagram">
+      <DependentUpon>ShoesShopDBEntity.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -155,5 +211,21 @@
   <ItemGroup>
     <None Include="Resources\bill.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ShoesShopDBEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShoesShopDBEntity.Context.cs</LastGenOutput>
+      <DependentUpon>ShoesShopDBEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="ShoesShopDBEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShoesShopDBEntity.edmx</DependentUpon>
+      <LastGenOutput>ShoesShopDBEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -258,6 +258,7 @@
             this.btXoa.TabIndex = 1;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -270,6 +271,7 @@
             this.btSua.TabIndex = 2;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 
@@ -282,6 +284,7 @@
             this.btThem.TabIndex = 3;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // label4
             // 
@@ -300,6 +303,7 @@
             this.dGVGiay.Name = "dGVGiay";
             this.dGVGiay.Size = new System.Drawing.Size(644, 209);
             this.dGVGiay.TabIndex = 4;
+            this.dGVGiay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVGiay_CellClick);
             // 
             // pictureBox1
             // 
@@ -350,6 +354,7 @@
             this.Name = "FQuanLyGiay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Giày";
+            this.Load += new System.EventHandler(this.FQuanLyGiay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSize)).EndInit();
