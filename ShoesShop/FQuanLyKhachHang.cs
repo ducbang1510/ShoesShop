@@ -86,5 +86,19 @@ namespace ShoesShop
                 txtDiaChi.Text = dGVKhachHang.Rows[e.RowIndex].Cells["Address"].Value.ToString();
             }
         }
+
+        private void dGVKhachHang_DoubleClick(object sender, EventArgs e)
+        {
+            int maKH;
+            string tenKH;
+            maKH = int.Parse(dGVKhachHang.CurrentRow.Cells["CustomerID"].Value.ToString());
+            tenKH = dGVKhachHang.CurrentRow.Cells["FullName"].Value.ToString();
+            //goi Form
+            FDatHang fDatHang = new FDatHang();
+            //truyen bien
+            fDatHang.maKH = maKH;
+            fDatHang.tenKH = tenKH;
+            fDatHang.ShowDialog();
+        }
     }
 }

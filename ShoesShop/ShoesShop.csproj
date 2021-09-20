@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,29 +56,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_CTDonHang.cs" />
     <Compile Include="BUS\BUS_DonHang.cs" />
     <Compile Include="BUS\BUS_Giay.cs" />
     <Compile Include="BUS\BUS_KhachHang.cs" />
+    <Compile Include="BUS\BUS_NhanVien.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DAO_CTDonHang.cs" />
     <Compile Include="DAO\DAO_DonHang.cs" />
     <Compile Include="DAO\DAO_Giay.cs" />
     <Compile Include="DAO\DAO_KhachHang.cs" />
+    <Compile Include="DAO\DAO_NhanVien.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="FChiTietHoaDon.cs">
+    <Compile Include="FDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FChiTietHoaDon.Designer.cs">
-      <DependentUpon>FChiTietHoaDon.cs</DependentUpon>
+    <Compile Include="FDatHang.Designer.cs">
+      <DependentUpon>FDatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FHoaDon.cs">
+    <Compile Include="FXacNhanDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FHoaDon.Designer.cs">
-      <DependentUpon>FHoaDon.cs</DependentUpon>
+    <Compile Include="FXacNhanDonHang.Designer.cs">
+      <DependentUpon>FXacNhanDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
@@ -138,11 +143,11 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FChiTietHoaDon.resx">
-      <DependentUpon>FChiTietHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="FDatHang.resx">
+      <DependentUpon>FDatHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FHoaDon.resx">
-      <DependentUpon>FHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="FXacNhanDonHang.resx">
+      <DependentUpon>FXacNhanDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>

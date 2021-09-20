@@ -15,7 +15,7 @@ namespace ShoesShop.DAO
             db = new ShoesShopDBEntities();
         }
 
-        public dynamic LayDSKhachHang()
+        public dynamic LayDSKhachHang() // Data for DataGridView
         {
             var ds = db.Customers.Select(c => new
             {
@@ -26,6 +26,17 @@ namespace ShoesShop.DAO
                 c.Email,
                 c.Address
             }).ToList();
+            return ds;
+        }
+
+        public dynamic LayDSKhachHang2() // Data for ComboBox
+        {
+            dynamic ds = db.Customers.Select(c => new
+            {
+                c.CustomerID,
+                c.FullName
+            }).ToList();
+
             return ds;
         }
 

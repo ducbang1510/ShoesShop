@@ -23,6 +23,13 @@ namespace ShoesShop.BUS
 
         }
 
+        public void LayDSKhachHang(ComboBox cb)
+        {
+            cb.DisplayMember = "FullName";
+            cb.ValueMember = "CustomerID";
+            cb.DataSource = daoKH.LayDSKhachHang2();
+        }
+
         public void ThemKhachHang(Customer c)
         {
             if (daoKH.ThemKhachHang(c))
