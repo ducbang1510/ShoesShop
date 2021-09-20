@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQuanLyNhanVien));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVNhanVien = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.grTTNV = new System.Windows.Forms.GroupBox();
             this.btXoa = new System.Windows.Forms.Button();
@@ -59,14 +59,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNhanVien)).BeginInit();
             this.grTTNV.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dGVNhanVien);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.grTTNV);
             this.panel2.Location = new System.Drawing.Point(12, 203);
@@ -74,13 +74,13 @@
             this.panel2.Size = new System.Drawing.Size(832, 468);
             this.panel2.TabIndex = 4;
             // 
-            // dataGridView1
+            // dGVNhanVien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 266);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 199);
-            this.dataGridView1.TabIndex = 9;
+            this.dGVNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVNhanVien.Location = new System.Drawing.Point(19, 266);
+            this.dGVNhanVien.Name = "dGVNhanVien";
+            this.dGVNhanVien.Size = new System.Drawing.Size(800, 199);
+            this.dGVNhanVien.TabIndex = 9;
             // 
             // label10
             // 
@@ -389,7 +389,7 @@
             this.Text = "Quản Lý Nhân Viên";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNhanVien)).EndInit();
             this.grTTNV.ResumeLayout(false);
             this.grTTNV.PerformLayout();
             this.ResumeLayout(false);
@@ -423,7 +423,7 @@
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVNhanVien;
         private System.Windows.Forms.TextBox txtVaiTro;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
