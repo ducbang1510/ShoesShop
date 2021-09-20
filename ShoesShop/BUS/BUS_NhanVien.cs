@@ -57,5 +57,36 @@ namespace ShoesShop.BUS
                 MessageBox.Show("Xóa nhân viên thất bại");
             }
         }
+
+        public bool KiemTraTenTaiKhoan(string username)
+        {
+            bool tinhTrang = false;
+
+            if (daoNV.KiemTraTenTaiKhoan(username))
+            {             
+                tinhTrang = true;
+            }
+
+            return tinhTrang;
+        }
+
+        public bool DangNhap(string username, string password)
+        {
+            bool tinhTrang = false;
+
+            if (daoNV.DangNhap(username, password))
+            {
+                MessageBox.Show("Đăng nhập thành công",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tinhTrang = true;
+            }
+            else
+            {
+                MessageBox.Show("Đăng nhập thất bại",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return tinhTrang;
+        }
     }
 }

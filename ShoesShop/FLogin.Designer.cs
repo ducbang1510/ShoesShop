@@ -91,6 +91,7 @@
             this.btDangNhap.TabIndex = 3;
             this.btDangNhap.Text = "Đăng nhập";
             this.btDangNhap.UseVisualStyleBackColor = false;
+            this.btDangNhap.Click += new System.EventHandler(this.btDangNhap_Click);
             // 
             // FLogin
             // 

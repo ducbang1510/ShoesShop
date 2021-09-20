@@ -241,6 +241,7 @@
             this.txtVaiTro.Name = "txtVaiTro";
             this.txtVaiTro.Size = new System.Drawing.Size(251, 24);
             this.txtVaiTro.TabIndex = 6;
+            this.txtVaiTro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // txtDiaChi
             // 
@@ -268,6 +269,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(251, 24);
             this.txtSDT.TabIndex = 4;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtGioiTinh
             // 
@@ -276,6 +278,7 @@
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(251, 24);
             this.txtGioiTinh.TabIndex = 3;
+            this.txtGioiTinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // label13
             // 
@@ -294,6 +297,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(251, 24);
             this.txtHoTen.TabIndex = 1;
+            this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // label9
             // 
@@ -343,6 +347,7 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(251, 24);
             this.txtMaNV.TabIndex = 0;
+            this.txtMaNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label3
             // 

@@ -24,8 +24,8 @@ namespace ShoesShop
         public void HienThiDSNhanVien()
         {
             CapNhatForm();
-            dGVNhanVien.DataSource = null;
-            busNV.LayDSNhanVien(dGVNhanVien);
+            dGVNhanVien.DataSource = null;          
+            busNV.LayDSNhanVien(dGVNhanVien);          
         }
 
         public void CapNhatForm()
@@ -47,43 +47,88 @@ namespace ShoesShop
         }
 
         private void btThem_Click(object sender, EventArgs e)
-        {
-            Employee nv = new Employee();
-            nv.EmployeeID = int.Parse(txtMaNV.Text);
-            nv.FullName = txtHoTen.Text;
-            nv.DateOfBirth = dtpNgaySinh.Value.Date;
-            nv.Gender = txtGioiTinh.Text;
-            nv.Email = txtEmail.Text;
-            nv.Phone = txtSDT.Text;
-            nv.Address = txtDiaChi.Text;
-            nv.UserRole = txtVaiTro.Text;
-            nv.Username = txtTaiKhoan.Text;
-            nv.Password = txtMatKhau.Text;
+        {          
 
-            busNV.ThemNhanVien(nv);          
-            HienThiDSNhanVien();
+            if(txtMaNV.Text == "" || txtHoTen.Text == "" || txtGioiTinh.Text == "" || txtEmail.Text == ""
+                || txtSDT.Text == "" || txtVaiTro.Text == "" || txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else 
+                if (busNV.KiemTraTenTaiKhoan(txtTaiKhoan.Text))
+                {
+                    MessageBox.Show("Tên tài khoản đã tồn tại");
+                    txtTaiKhoan.Text = "";
+                }
+                else
+                {
+                    if (MessageBox.Show("Xác nhận thêm thông tin sản phẩm", "Xác nhận",
+                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Employee nv = new Employee();
+                        nv.EmployeeID = int.Parse(txtMaNV.Text);
+                        nv.FullName = txtHoTen.Text;
+                        nv.DateOfBirth = dtpNgaySinh.Value.Date;
+                        nv.Gender = txtGioiTinh.Text;
+                        nv.Email = txtEmail.Text;
+                        nv.Phone = txtSDT.Text;
+                        nv.Address = txtDiaChi.Text;
+                        nv.UserRole = txtVaiTro.Text;
+                        nv.Username = txtTaiKhoan.Text;
+                        nv.Password = txtMatKhau.Text;
+
+                        busNV.ThemNhanVien(nv);
+                        HienThiDSNhanVien();
+                    }
+                }
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            Employee nv = new Employee();
-            nv.EmployeeID = int.Parse(txtMaNV.Text);
-            nv.FullName = txtHoTen.Text;           
-            nv.Email = txtEmail.Text;
-            nv.Phone = txtSDT.Text;
-            nv.Address = txtDiaChi.Text;            
-            nv.Username = txtTaiKhoan.Text;
-            nv.Password = txtMatKhau.Text;
+            if (txtMaNV.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên muốn sửa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {            
+                if (MessageBox.Show("Xác nhận xóa thông tin nhân viên", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Employee nv = new Employee();
+                    nv.EmployeeID = int.Parse(txtMaNV.Text);
+                    nv.FullName = txtHoTen.Text;
+                    nv.Email = txtEmail.Text;
+                    nv.Phone = txtSDT.Text;
+                    nv.Address = txtDiaChi.Text;
+                    nv.Username = txtTaiKhoan.Text;
+                    nv.Password = txtMatKhau.Text;
 
-            busNV.SuaThongTinNhanVien(nv);
-            HienThiDSNhanVien();
+                    busNV.SuaThongTinNhanVien(nv);
+                    HienThiDSNhanVien();
+                }
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
-        {
-            int maNV = int.Parse(txtMaNV.Text);
-            busNV.XoaNhanVien(maNV);
-            HienThiDSNhanVien();
+        {          
+            if (txtMaNV.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên muốn xóa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int maNV = int.Parse(txtMaNV.Text);
+
+                if (MessageBox.Show("Xác nhận xóa thông tin nhân viên", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    busNV.XoaNhanVien(maNV);
+                    HienThiDSNhanVien();
+                }
+            }
         }
 
         private void dGVNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -101,6 +146,29 @@ namespace ShoesShop
                 txtTaiKhoan.Text = dGVNhanVien.Rows[e.RowIndex].Cells["UserName"].Value.ToString();
                 txtMatKhau.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Password"].Value.ToString();
             }
+        }    
+
+        // kiểm soát thông tin người dùng nhập vào
+
+            //không cho nhập số
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
+            
+            //không cho nhập chữ và kí tự đặc biệt 
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                if (e.KeyChar == char.Parse("."))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        
     }
 }
