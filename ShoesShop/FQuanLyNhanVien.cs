@@ -44,12 +44,13 @@ namespace ShoesShop
         private void FQuanLyNhanVien_Load(object sender, EventArgs e)
         {
             HienThiDSNhanVien();
+            txtMaNV.Enabled = false;
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {          
 
-            if(txtMaNV.Text == "" || txtHoTen.Text == "" || txtGioiTinh.Text == "" || txtEmail.Text == ""
+            if(txtHoTen.Text == "" || txtGioiTinh.Text == "" || txtEmail.Text == ""
                 || txtSDT.Text == "" || txtVaiTro.Text == "" || txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm",
@@ -66,8 +67,7 @@ namespace ShoesShop
                     if (MessageBox.Show("Xác nhận thêm thông tin sản phẩm", "Xác nhận",
                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Employee nv = new Employee();
-                        nv.EmployeeID = int.Parse(txtMaNV.Text);
+                        Employee nv = new Employee();                       
                         nv.FullName = txtHoTen.Text;
                         nv.DateOfBirth = dtpNgaySinh.Value.Date;
                         nv.Gender = txtGioiTinh.Text;
