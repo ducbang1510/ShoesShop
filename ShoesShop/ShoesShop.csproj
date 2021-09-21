@@ -60,6 +60,7 @@
     <Compile Include="BUS\BUS_DonHang.cs" />
     <Compile Include="BUS\BUS_Giay.cs" />
     <Compile Include="BUS\BUS_KhachHang.cs" />
+    <Compile Include="BUS\BUS_NhaCungCap.cs" />
     <Compile Include="BUS\BUS_NhanVien.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
@@ -68,6 +69,7 @@
     <Compile Include="DAO\DAO_DonHang.cs" />
     <Compile Include="DAO\DAO_Giay.cs" />
     <Compile Include="DAO\DAO_KhachHang.cs" />
+    <Compile Include="DAO\DAO_NhaCungCap.cs" />
     <Compile Include="DAO\DAO_NhanVien.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>

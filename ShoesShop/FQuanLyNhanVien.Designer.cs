@@ -81,6 +81,7 @@
             this.dGVNhanVien.Name = "dGVNhanVien";
             this.dGVNhanVien.Size = new System.Drawing.Size(800, 199);
             this.dGVNhanVien.TabIndex = 9;
+            this.dGVNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVNhanVien_CellClick);
             // 
             // label10
             // 
@@ -138,6 +139,7 @@
             this.btXoa.TabIndex = 2;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // dtpNgaySinh
             // 
@@ -159,6 +161,7 @@
             this.btSua.TabIndex = 1;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // txtMatKhau
             // 
@@ -181,6 +184,7 @@
             this.btThem.TabIndex = 0;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // txtTaiKhoan
             // 
@@ -264,6 +268,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(251, 24);
             this.txtSDT.TabIndex = 4;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtGioiTinh
             // 
@@ -290,6 +295,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(251, 24);
             this.txtHoTen.TabIndex = 1;
+            this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // label9
             // 
@@ -297,7 +303,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(9, 145);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 16);
+            this.label9.Size = new System.Drawing.Size(61, 16);
             this.label9.TabIndex = 0;
             this.label9.Text = "Địa chỉ:";
             // 
@@ -307,7 +313,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(357, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 16);
+            this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "SĐT:";
             // 
@@ -387,6 +393,7 @@
             this.Name = "FQuanLyNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhân Viên";
+            this.Load += new System.EventHandler(this.FQuanLyNhanVien_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNhanVien)).EndInit();

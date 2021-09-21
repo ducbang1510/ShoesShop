@@ -106,5 +106,46 @@ namespace ShoesShop.DAO
 
             return tinhTrang;
         }
+
+        public bool KiemTraTenTaiKhoan(string username)
+        {
+            bool tinhTrang = false;
+            try
+            {
+                Employee e = db.Employees.FirstOrDefault(s => s.Username == username);
+                if (e.FullName != "")
+                    tinhTrang = true;
+                else
+                    tinhTrang = false;
+
+            }
+            catch (Exception)
+            {
+                tinhTrang = false;
+            }
+
+            return tinhTrang;
+        }
+
+        public bool DangNhap(string username, string password)
+        {
+            bool tinhTrang = false;
+            try
+            {
+                Employee e = db.Employees.FirstOrDefault(s => s.Username == username);
+
+                if (e.Password == password)
+                    tinhTrang = true;
+                else
+                    tinhTrang = false;
+
+            }
+            catch (Exception)
+            {
+                tinhTrang = false;
+            }
+
+            return tinhTrang;
+        }
     }
 }
