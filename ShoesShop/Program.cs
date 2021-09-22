@@ -16,7 +16,7 @@ namespace ShoesShop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FQuanLyDonHang());
+            Application.Run(new FMenu());
         }
     }
 }

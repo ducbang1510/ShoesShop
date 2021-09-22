@@ -19,7 +19,7 @@ namespace ShoesShop.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,6 +63,86 @@ namespace ShoesShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3668836_bill_fee_tax_icon {
+            get {
+                object obj = ResourceManager.GetObject("_3668836_bill_fee_tax_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _416386_clothes_dunk_nike_shoes_icon {
+            get {
+                object obj = ResourceManager.GetObject("_416386_clothes_dunk_nike_shoes_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _416404_bill_receipt_icon {
+            get {
+                object obj = ResourceManager.GetObject("_416404_bill_receipt_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4202091_shoes_logo_social_nike_icon {
+            get {
+                object obj = ResourceManager.GetObject("_4202091_shoes_logo_social_nike_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _52375_back_to_the_future_future_shoes_icon {
+            get {
+                object obj = ResourceManager.GetObject("_52375_back_to_the_future_future_shoes_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7422471_puma_animal_shoes_clothes_sport_icon {
+            get {
+                object obj = ResourceManager.GetObject("_7422471_puma_animal_shoes_clothes_sport_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7422528_adidas_sport_sports_exercise_icon {
+            get {
+                object obj = ResourceManager.GetObject("_7422528_adidas_sport_sports_exercise_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _897223_goal_marathon_run_shoes_icon {
+            get {
+                object obj = ResourceManager.GetObject("_897223_goal_marathon_run_shoes_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_shoes {
             get {
                 object obj = ResourceManager.GetObject("background-shoes", resourceCulture);
@@ -93,9 +173,39 @@ namespace ShoesShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap converse_logo_4 {
+            get {
+                object obj = ResourceManager.GetObject("converse_logo_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_rotation_job_seeker_employee_unemployee_work_2620504 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_rotation_job_seeker_employee_unemployee_work_2620504", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_systemmigratingdataservicecloud_4904829 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_systemmigratingdataservicecloud_4904829", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +253,39 @@ namespace ShoesShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap members_icon {
+            get {
+                object obj = ResourceManager.GetObject("members_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shoe1 {
             get {
                 object obj = ResourceManager.GetObject("shoe1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_256 {
+            get {
+                object obj = ResourceManager.GetObject("user_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vans_Logo_van_shoes_9511282_250_250 {
+            get {
+                object obj = ResourceManager.GetObject("Vans_Logo_van_shoes_9511282_250_250", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

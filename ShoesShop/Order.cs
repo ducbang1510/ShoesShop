@@ -21,10 +21,10 @@ namespace ShoesShop
         }
     
         public int OrderID { get; set; }
-        public Nullable<int> CustomerID { get; set; }
-        public Nullable<int> EmployeeID { get; set; }
-        public Nullable<System.DateTime> OrderDate { get; set; }
-        public Nullable<decimal> TotalPrice { get; set; }
+        public int CustomerID { get; set; }
+        public int EmployeeID { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public decimal TotalPrice { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }

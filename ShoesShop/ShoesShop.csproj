@@ -33,18 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +81,12 @@
     <Compile Include="Employee.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="FBaoCaoSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoCaoSanPham.Designer.cs">
+      <DependentUpon>FBaoCaoSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="FChiTietDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +98,18 @@
     </Compile>
     <Compile Include="FDatHang.Designer.cs">
       <DependentUpon>FDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMenu.Designer.cs">
+      <DependentUpon>FMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQuanLyBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQuanLyBaoCao.Designer.cs">
+      <DependentUpon>FQuanLyBaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="FQuanLyDonHang.cs">
       <SubType>Form</SubType>
@@ -136,6 +161,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\cRSanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cRSanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Sho.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
     </Compile>
@@ -157,6 +188,9 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>ShoesShopDBEntity.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FBaoCaoSanPham.resx">
+      <DependentUpon>FBaoCaoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FChiTietDonHang.resx">
       <DependentUpon>FChiTietDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +222,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\cRSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cRSanPham.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -237,6 +275,20 @@
     <None Include="Resources\bill.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\3668836_bill_fee_tax_icon.png" />
+    <Content Include="Resources\416386_clothes_dunk_nike_shoes_icon.png" />
+    <Content Include="Resources\416404_bill_receipt_icon.png" />
+    <Content Include="Resources\4202091_shoes_logo_social_nike_icon.png" />
+    <Content Include="Resources\52375_back to the future_future_shoes_icon.png" />
+    <Content Include="Resources\7422471_puma_animal_shoes_clothes_sport_icon.png" />
+    <Content Include="Resources\7422528_adidas_sport_sports_exercise_icon.png" />
+    <Content Include="Resources\897223_goal_marathon_run_shoes_icon.png" />
+    <Content Include="Resources\converse_logo_4.png" />
+    <Content Include="Resources\iconfinder_rotation_job_seeker_employee_unemployee_work_2620504.png" />
+    <Content Include="Resources\iconfinder_systemmigratingdataservicecloud_4904829.png" />
+    <Content Include="Resources\members-icon.png" />
+    <Content Include="Resources\user-256.png" />
+    <Content Include="Resources\Vans-Logo-van-shoes-9511282-250-250.jpg" />
     <Content Include="ShoesShopDBEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ShoesShopDBEntity.Context.cs</LastGenOutput>
@@ -250,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,7 +41,7 @@ namespace ShoesShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            if (txtMaNCC.Text == "" || txtTenNCC.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "")
+            if (txtTenNCC.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm",
                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -51,7 +51,6 @@ namespace ShoesShop
                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Supplier s = new Supplier();
-                s.SupplierID = int.Parse(txtMaNCC.Text);
                 s.CompanyName = txtTenNCC.Text;
                 s.Phone = txtSDT.Text;
                 s.Address = txtDiaChi.Text;
@@ -119,6 +118,7 @@ namespace ShoesShop
         private void FNhaCungCap_Load(object sender, EventArgs e)
         {
             HienThiDSNhaCungCap();
+            txtMaNCC.Enabled = false;
         }
 
 

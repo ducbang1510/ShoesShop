@@ -145,4 +145,46 @@
   <data name="bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="converse_logo_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\converse_logo_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_rotation_job_seeker_employee_unemployee_work_2620504" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_rotation_job_seeker_employee_unemployee_work_2620504.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_systemmigratingdataservicecloud_4904829" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_systemmigratingdataservicecloud_4904829.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="members_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\members-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vans_Logo_van_shoes_9511282_250_250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vans-Logo-van-shoes-9511282-250-250.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3668836_bill_fee_tax_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3668836_bill_fee_tax_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_416386_clothes_dunk_nike_shoes_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\416386_clothes_dunk_nike_shoes_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_416404_bill_receipt_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\416404_bill_receipt_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4202091_shoes_logo_social_nike_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4202091_shoes_logo_social_nike_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_52375_back_to_the_future_future_shoes_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\52375_back to the future_future_shoes_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7422471_puma_animal_shoes_clothes_sport_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7422471_puma_animal_shoes_clothes_sport_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7422528_adidas_sport_sports_exercise_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7422528_adidas_sport_sports_exercise_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_897223_goal_marathon_run_shoes_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\897223_goal_marathon_run_shoes_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
