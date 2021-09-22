@@ -22,13 +22,13 @@ namespace ShoesShop
     
         public int ShoesID { get; set; }
         public string ShoesName { get; set; }
-        public Nullable<int> SupplierID { get; set; }
-        public Nullable<int> QuantityRemaining { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<bool> Discontinued { get; set; }
+        public int SupplierID { get; set; }
+        public int QuantityRemaining { get; set; }
+        public decimal UnitPrice { get; set; }
+        public bool Discontinued { get; set; }
         public byte[] Image { get; set; }
         public string ImagePath { get; set; }
-        public Nullable<int> Size { get; set; }
+        public int Size { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Detail> Order_Details { get; set; }

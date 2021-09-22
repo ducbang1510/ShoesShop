@@ -65,5 +65,11 @@ namespace ShoesShop.BUS
                 MessageBox.Show("Xóa sản phẩm không thành công");
             }
         }
+
+        // report section
+        public List<Sho> LayDSSanPhamReport()
+        {
+            return daoGiay.LayDSSanPhamReport();
+        }
     }
 }

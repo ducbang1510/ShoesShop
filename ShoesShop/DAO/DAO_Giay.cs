@@ -99,5 +99,12 @@ namespace ShoesShop.DAO
 
             return tinhTrang;
         }
+
+        // report section
+        public List<Sho> LayDSSanPhamReport()
+        {
+            var ds = db.Shoes.Select(s => s).ToList();
+            return ds;
+        }
     }
 }
