@@ -74,5 +74,11 @@ namespace ShoesShop.DAO
             }
             return tinhTrang;
         }
+
+        public List<Order> LayDSDonHangReport()
+        {
+            var ds = db.Orders.Select(s => s).ToList();
+            return ds;
+        }
     }
 }

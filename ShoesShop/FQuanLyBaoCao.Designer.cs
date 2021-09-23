@@ -31,13 +31,15 @@ namespace ShoesShop
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mSISanPham = new System.Windows.Forms.ToolStripMenuItem();
+            this.baToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mSISanPham});
+            this.mSISanPham,
+            this.baToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(424, 24);
@@ -50,6 +52,13 @@ namespace ShoesShop
             this.mSISanPham.Size = new System.Drawing.Size(116, 20);
             this.mSISanPham.Text = "Báo cáo sản phẩm";
             this.mSISanPham.Click += new System.EventHandler(this.mSISanPham_Click);
+            // 
+            // baToolStripMenuItem
+            // 
+            this.baToolStripMenuItem.Name = "baToolStripMenuItem";
+            this.baToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
+            this.baToolStripMenuItem.Text = "Báo cáo đơn hàng";
+            this.baToolStripMenuItem.Click += new System.EventHandler(this.baToolStripMenuItem_Click);
             // 
             // FQuanLyBaoCao
             // 
@@ -70,5 +79,6 @@ namespace ShoesShop
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mSISanPham;
+        private System.Windows.Forms.ToolStripMenuItem baToolStripMenuItem;
     }
 }

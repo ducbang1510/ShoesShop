@@ -30,7 +30,7 @@ namespace ShoesShop
                 if (busNV.DangNhap(txtTenDangNhap.Text, txtMatKhau.Text))
                 {
                     this.Hide();
-                    FQuanLyNhanVien f = new FQuanLyNhanVien();
+                    FMenu f = new FMenu();
                     f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
                     this.Close();

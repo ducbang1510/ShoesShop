@@ -48,6 +48,8 @@ namespace ShoesShop
             this.label1 = new System.Windows.Forms.Label();
             this.lbbanner = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btBaoCao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -147,6 +149,7 @@ namespace ShoesShop
             this.btQuanLyNV.TabIndex = 0;
             this.btQuanLyNV.Text = " Quản Lý \r\nNhân Viên";
             this.btQuanLyNV.UseVisualStyleBackColor = true;
+            this.btQuanLyNV.Click += new System.EventHandler(this.btQuanLyNV_Click);
             // 
             // panel4
             // 
@@ -170,6 +173,7 @@ namespace ShoesShop
             this.btNhaCC.Text = " Nhà Cung Cấp";
             this.btNhaCC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btNhaCC.UseVisualStyleBackColor = true;
+            this.btNhaCC.Click += new System.EventHandler(this.btNhaCC_Click);
             // 
             // panel5
             // 
@@ -194,6 +198,7 @@ namespace ShoesShop
             this.btQuanLyGiay.Text = "Quản Lý Giày";
             this.btQuanLyGiay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btQuanLyGiay.UseVisualStyleBackColor = false;
+            this.btQuanLyGiay.Click += new System.EventHandler(this.btQuanLyGiay_Click);
             // 
             // panel6
             // 
@@ -217,6 +222,7 @@ namespace ShoesShop
             this.btQuanLyHoaDon.Text = "Quản Lý Hóa Đơn";
             this.btQuanLyHoaDon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btQuanLyHoaDon.UseVisualStyleBackColor = true;
+            this.btQuanLyHoaDon.Click += new System.EventHandler(this.btQuanLyHoaDon_Click);
             // 
             // panel7
             // 
@@ -241,12 +247,13 @@ namespace ShoesShop
             this.btQuanLyKH.Text = "Quản Lý \r\nKhách Hàng";
             this.btQuanLyKH.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btQuanLyKH.UseVisualStyleBackColor = true;
+            this.btQuanLyKH.Click += new System.EventHandler(this.btQuanLyKH_Click);
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(622, 235);
+            this.label1.Size = new System.Drawing.Size(622, 168);
             this.label1.TabIndex = 0;
             // 
             // lbbanner
@@ -270,13 +277,40 @@ namespace ShoesShop
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // frmMain
+            // button1
+            // 
+            this.button1.BackgroundImage = global::ShoesShop.Properties.Resources.customer;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(220, 443);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 233);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Đặt Hàng ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btBaoCao
+            // 
+            this.btBaoCao.Location = new System.Drawing.Point(10, 181);
+            this.btBaoCao.Name = "btBaoCao";
+            this.btBaoCao.Size = new System.Drawing.Size(112, 44);
+            this.btBaoCao.TabIndex = 7;
+            this.btBaoCao.Text = "Báo cáo";
+            this.btBaoCao.UseVisualStyleBackColor = true;
+            this.btBaoCao.Click += new System.EventHandler(this.btBaoCao_Click);
+            // 
+            // FMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(907, 689);
+            this.Controls.Add(this.btBaoCao);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbbanner);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
@@ -289,7 +323,7 @@ namespace ShoesShop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "FMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panel1.ResumeLayout(false);
@@ -330,5 +364,7 @@ namespace ShoesShop
         private System.Windows.Forms.Button btQuanLyKH;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbbanner;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btBaoCao;
     }
 }

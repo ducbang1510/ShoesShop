@@ -68,5 +68,10 @@ namespace ShoesShop.BUS
             //    return false;
             //}
         }
+
+        public List<Order> LayDSDonHangReport()
+        {
+            return daoDH.LayDSDonHangReport();
+        }
     }
 }
