@@ -20,6 +20,15 @@ namespace ShoesShop
             busGiay = new BUS_Giay();
         }
 
+        public void CapNhatForm()
+        {
+            txtMaGiay.Text = "";
+            txtTenGiay.Text = "";
+            cbNCC.Text = "";
+            txtGia.Text = "";
+            txtSoLuongTon.Text = "";
+        }
+
         public void HienThiDSSanPham()
         {
             dGVGiay.DataSource = null;
@@ -40,38 +49,76 @@ namespace ShoesShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            Sho s = new Sho();
+            if (txtTenGiay.Text == "" || cbNCC.Text == "" || txtGia.Text == ""
+                || txtSoLuongTon.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("Xác nhận thêm thông tin sản phẩm", "Xác nhận",
+                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Sho s = new Sho();
 
-            s.ShoesName = txtTenGiay.Text;
-            s.QuantityRemaining = int.Parse(txtSoLuongTon.Text);
-            s.UnitPrice = decimal.Parse(txtGia.Text);
-            s.Size = (int)numSize.Value;
-            s.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
+                    s.ShoesName = txtTenGiay.Text;
+                    s.QuantityRemaining = int.Parse(txtSoLuongTon.Text);
+                    s.UnitPrice = decimal.Parse(txtGia.Text);
+                    s.Size = (int)numSize.Value;
+                    s.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
 
-            busGiay.ThemThongTinGiay(s);
-            HienThiDSSanPham();
+                    busGiay.ThemThongTinGiay(s);
+                    HienThiDSSanPham();
+                }
+            }
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            Sho s = new Sho();
+            if (txtMaGiay.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm muốn sửa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("Xác nhận sửa thông tin sản phẩm", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Sho s = new Sho();
 
-            s.ShoesID = int.Parse(dGVGiay.Rows[dGVGiay.CurrentRow.Index].Cells[0].Value.ToString());
-            s.ShoesName = txtTenGiay.Text;
-            s.QuantityRemaining = int.Parse(txtSoLuongTon.Text);
-            s.UnitPrice = decimal.Parse(txtGia.Text);
-            s.Size = (int)numSize.Value;
-            s.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
+                    s.ShoesID = int.Parse(dGVGiay.Rows[dGVGiay.CurrentRow.Index].Cells[0].Value.ToString());
+                    s.ShoesName = txtTenGiay.Text;
+                    s.QuantityRemaining = int.Parse(txtSoLuongTon.Text);
+                    s.UnitPrice = decimal.Parse(txtGia.Text);
+                    s.Size = (int)numSize.Value;
+                    s.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
 
-            busGiay.SuaThongTinGiay(s);
-            HienThiDSSanPham();
+                    busGiay.SuaThongTinGiay(s);
+                    HienThiDSSanPham();
+                }
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            int maGiay = int.Parse(dGVGiay.Rows[dGVGiay.CurrentRow.Index].Cells[0].Value.ToString());
-            busGiay.XoaThongTinGiay(maGiay);
-            HienThiDSSanPham();
+            if (txtMaGiay.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm muốn xóa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int maGiay = int.Parse(dGVGiay.Rows[dGVGiay.CurrentRow.Index].Cells[0].Value.ToString());
+
+                if (MessageBox.Show("Xác nhận xóa thông tin sản phẩm", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    busGiay.XoaThongTinGiay(maGiay);
+                    HienThiDSSanPham();
+                }
+            }
         }
 
         private void dGVGiay_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -87,6 +134,20 @@ namespace ShoesShop
                     numSize.Value = decimal.Parse(dGVGiay.Rows[e.RowIndex].Cells["Size"].Value.ToString());
                 if (dGVGiay.Rows[e.RowIndex].Cells["CompanyName"].Value != null)
                     cbNCC.Text = dGVGiay.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
+            }
+        }
+
+        // kiểm soát thông tin người dùng nhập vào
+
+        //không cho nhập chữ và kí tự đặc biệt 
+        private void txtSoLuongTon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                if (e.KeyChar == char.Parse("."))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
             }
         }
     }

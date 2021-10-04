@@ -13,6 +13,7 @@ namespace ShoesShop
 {
     public partial class FDatHang : Form
     {
+        public int maDH;
         public int maKH;
         public string tenKH;
 
@@ -59,57 +60,91 @@ namespace ShoesShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            bool kiemtra = true;
-            // duyet tung dong trong datatable
-            // neu maSP co, tang so luong, chua co
-            // them dong moi
-
-            foreach (DataRow item in dtSanPham.Rows)
+            if(txtMaGiay.Text == "")
             {
-                if (item[0].ToString() == txtMaGiay.Text) //co maSP hay ko
+                MessageBox.Show("Vui lòng chọn sản phẩm để thêm",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                bool kiemtra = true;
+                // duyet tung dong trong datatable
+                // neu maSP co, tang so luong, chua co
+                // them dong moi
+
+                foreach (DataRow item in dtSanPham.Rows)
                 {
-                    kiemtra = false;
-                    // tang so luong
-                    item[3] = int.Parse(item[3].ToString()) + ((int)numSoLuong.Value);
-                    break;
+                    if (item[0].ToString() == txtMaGiay.Text) //co maSP hay ko
+                    {
+                        kiemtra = false;
+                        // tang so luong
+                        item[3] = int.Parse(item[3].ToString()) + ((int)numSoLuong.Value);
+                        break;
+                    }
                 }
-            }
 
-            if (kiemtra)
-            {
-                DataRow r = dtSanPham.NewRow();
+                if (kiemtra)
+                {
+                    DataRow r = dtSanPham.NewRow();
 
-                r[0] = txtMaGiay.Text;
-                r[1] = txtTenGiay.Text;
-                r[2] = txtDonGia.Text;
-                r[3] = numSoLuong.Value.ToString();
+                    r[0] = txtMaGiay.Text;
+                    r[1] = txtTenGiay.Text;
+                    r[2] = txtDonGia.Text;
+                    r[3] = numSoLuong.Value.ToString();
 
-                dtSanPham.Rows.Add(r);
-            }
+                    dtSanPham.Rows.Add(r);
+                }
+            } 
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            int dem = -1;
-            foreach (DataRow item in dtSanPham.Rows)
+            if(txtMaGiay.Text == "")
             {
-                dem++;
-                if (dem == dGVCTDH.CurrentCell.RowIndex)
-                {
-                    item[2] = decimal.Parse(txtDonGia.Text);
-                    item[3] = int.Parse(numSoLuong.Value.ToString());
-                    break;
-                }
+                MessageBox.Show("Vui lòng chọn sản phẩm để sửa",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (dtSanPham.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm để xóa",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int dem = -1;
+                foreach (DataRow item in dtSanPham.Rows)
+                {
+                    dem++;
+                    if (dem == dGVCTDH.CurrentCell.RowIndex)
+                    {
+                        item[2] = decimal.Parse(txtDonGia.Text);
+                        item[3] = int.Parse(numSoLuong.Value.ToString());
+                        break;
+                    }
+                }
+            } 
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewCell c in dGVCTDH.SelectedCells)
+            if (txtMaGiay.Text == "")
             {
-                if (c.Selected)
-                    dGVCTDH.Rows.RemoveAt(c.RowIndex);
+                MessageBox.Show("Vui lòng chọn sản phẩm để xóa",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (dtSanPham.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm để xóa",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                foreach (DataGridViewCell c in dGVCTDH.SelectedCells)
+                {
+                    if (c.Selected)
+                        dGVCTDH.Rows.RemoveAt(c.RowIndex);
+                }
+            }         
         }
 
         private void dGVGiay_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -140,7 +175,7 @@ namespace ShoesShop
 
             fHoaDon.maKH = int.Parse(txtMaKH.Text);
             fHoaDon.tenKH = txtTenKH.Text;
-            fHoaDon.dtSanPham = dtSanPham;
+            fHoaDon.dtSanPham = this.dtSanPham;
 
             fHoaDon.ShowDialog();
         }

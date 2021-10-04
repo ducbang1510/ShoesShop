@@ -17,6 +17,19 @@ namespace ShoesShop.BUS
             daoNV = new DAO_NhanVien();
         }
 
+        //check isAdmin
+        public bool isAdmin(string username)
+        {
+            return daoNV.isAdmin(username);
+        }
+
+        //check isMyUsername
+        public bool isMyUsername(string username, int maNV)
+        {
+            return daoNV.isMyUsername(username, maNV);
+        }
+
+
         public void HienThiDSNhanVien(ComboBox cb)
         {
             cb.DisplayMember = "FullName";
@@ -33,11 +46,13 @@ namespace ShoesShop.BUS
         {
             if (daoNV.ThemNhanVien(nv))
             {
-                MessageBox.Show("Thêm nhân viên mới thành công");
+                MessageBox.Show("Thêm nhân viên mới thành công",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm nhân viên mới thất bại");
+                MessageBox.Show("Thêm nhân viên mới thất bại",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -45,11 +60,13 @@ namespace ShoesShop.BUS
         {
             if (daoNV.SuaThongTinNhanVien(nv))
             {
-                MessageBox.Show("Sửa thông tin nhân viên thành công");
+                MessageBox.Show("Sửa thông tin nhân viên thành công",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);              
             }
             else
             {
-                MessageBox.Show("Sửa thông tin nhân viên thất bại");
+                MessageBox.Show("Sửa thông tin nhân viên thất bại",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);             
             }
         }
 
@@ -57,11 +74,13 @@ namespace ShoesShop.BUS
         {
             if (daoNV.XoaNhanVien(maNV))
             {
-                MessageBox.Show("Xóa nhân viên thành công");
+                MessageBox.Show("Xóa nhân viên thành công",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);              
             }
             else
             {
-                MessageBox.Show("Xóa nhân viên thất bại");
+                MessageBox.Show("Xóa nhân viên thất bại",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

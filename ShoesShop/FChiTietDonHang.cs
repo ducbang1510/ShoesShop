@@ -39,7 +39,11 @@ namespace ShoesShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-
+            //gọi form đặt hàng
+            FDatHang f = new FDatHang();
+            //truyền maDH qua form đặt hàng
+            f.maDH = this.maDH;
+            f.ShowDialog();
         }
 
         private void btSua_Click(object sender, EventArgs e)

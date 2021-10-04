@@ -69,15 +69,8 @@ namespace ShoesShop
             d.OrderDate = dtpNgayDatHang.Value;
             d.TotalPrice = decimal.Parse(txtTongTien.Text);
 
-            if (busDH.ThemDonHang(d))
-            {
-                MessageBox.Show("Tạo đơn hàng thành công");
-                HienThiDSDonHang();
-            }
-            else
-            {
-                MessageBox.Show("Tạo đơn hàng thất bại");
-            }
+            busDH.ThemDonHang(d);
+            HienThiDSDonHang();
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -108,15 +101,24 @@ namespace ShoesShop
 
         private void btXacNhan_Click(object sender, EventArgs e)
         {
-            int ma = int.Parse(txtMaDH.Text);
-            if (busCTDH.ThemCTDonHang(ma, dtSanPham))
+            if(txtMaDH.Text == "")
             {
-                MessageBox.Show("Đặt hàng thành công");
-                Close();
+                MessageBox.Show("Vui lòng chọn đơn hàng để xác nhận",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Đặt hàng thất bại");
+                int ma = int.Parse(txtMaDH.Text);
+
+                if (busCTDH.ThemCTDonHang(ma, dtSanPham))
+                {
+                    MessageBox.Show("Đặt hàng thành công");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đặt hàng thất bại");
+                }
             }
         }
 

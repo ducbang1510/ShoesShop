@@ -20,8 +20,18 @@ namespace ShoesShop
             busKH = new BUS_KhachHang();
         }
 
+        public void CapNhatForm()
+        {
+            txtMaKH.Text = "";
+            txtHoTen.Text = "";
+            txtEmail.Text = "";
+            txtSDT.Text = "";
+            txtDiaChi.Text = "";
+        }
+
         public void HienThiDSKhachHang()
         {
+            CapNhatForm();
             dGVKhachHang.DataSource = null;
             busKH.LayDSKhachHang(dGVKhachHang);
             dGVKhachHang.Columns[0].Width = (int)(dGVKhachHang.Width * 0.1);
@@ -39,38 +49,75 @@ namespace ShoesShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
+            if (txtHoTen.Text == ""|| txtEmail.Text == ""
+                || txtSDT.Text == "" || txtDiaChi.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("Xác nhận thêm thông tin khách hàng", "Xác nhận",
+                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Customer c = new Customer();
 
-            c.FullName = txtHoTen.Text;
-            c.DateOfBirth = dtpNgaySinh.Value.Date;
-            c.Email = txtEmail.Text;
-            c.Phone = txtSDT.Text;
-            c.Address = txtDiaChi.Text;
+                    c.FullName = txtHoTen.Text;
+                    c.DateOfBirth = dtpNgaySinh.Value.Date;
+                    c.Email = txtEmail.Text;
+                    c.Phone = txtSDT.Text;
+                    c.Address = txtDiaChi.Text;
 
-            busKH.ThemKhachHang(c);
-            HienThiDSKhachHang();
+                    busKH.ThemKhachHang(c);
+                    HienThiDSKhachHang();
+                }
+            }         
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
+            if (txtMaKH.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng muốn sửa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("Xác nhận sửa thông tin khách hàng", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Customer c = new Customer();
 
-            c.CustomerID = int.Parse(dGVKhachHang.Rows[dGVKhachHang.CurrentRow.Index].Cells[0].Value.ToString());
-            c.FullName = txtHoTen.Text;
-            c.DateOfBirth = dtpNgaySinh.Value.Date;
-            c.Email = txtEmail.Text;
-            c.Phone = txtSDT.Text;
-            c.Address = txtDiaChi.Text;
+                    c.CustomerID = int.Parse(dGVKhachHang.Rows[dGVKhachHang.CurrentRow.Index].Cells[0].Value.ToString());
+                    c.FullName = txtHoTen.Text;
+                    c.DateOfBirth = dtpNgaySinh.Value.Date;
+                    c.Email = txtEmail.Text;
+                    c.Phone = txtSDT.Text;
+                    c.Address = txtDiaChi.Text;
 
-            busKH.SuaThongTinKhachHang(c);
-            HienThiDSKhachHang();
+                    busKH.SuaThongTinKhachHang(c);
+                    HienThiDSKhachHang();
+                }
+            }          
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            int maKH = int.Parse(dGVKhachHang.Rows[dGVKhachHang.CurrentRow.Index].Cells[0].Value.ToString());
-            busKH.XoaThongTinKhachHang(maKH);
-            HienThiDSKhachHang();
+            if (txtMaKH.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng muốn xóa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int maKH = int.Parse(dGVKhachHang.Rows[dGVKhachHang.CurrentRow.Index].Cells[0].Value.ToString());
+                if (MessageBox.Show("Xác nhận xóa thông tin khách hàng", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    busKH.XoaThongTinKhachHang(maKH);
+                    HienThiDSKhachHang();
+                }
+            }     
         }
 
         private void dGVKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -99,6 +146,28 @@ namespace ShoesShop
             fDatHang.maKH = maKH;
             fDatHang.tenKH = tenKH;
             fDatHang.ShowDialog();
+        }
+
+        // kiểm soát thông tin người dùng nhập vào
+
+        // không cho nhập số
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+
+        //không cho nhập chữ và kí tự đặc biệt
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                if (e.KeyChar == char.Parse("."))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
         }
     }
 }

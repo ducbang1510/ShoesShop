@@ -34,11 +34,13 @@ namespace ShoesShop.BUS
         {
             if (daoGiay.ThemThongTinGiay(s))
             {
-                MessageBox.Show("Thêm sản phẩm thành công");
+                MessageBox.Show("Thêm sản phẩm thành công",
+                          "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm sản phẩm không thành công");
+                MessageBox.Show("Thêm sản phẩm thất bại",
+                          "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -46,11 +48,13 @@ namespace ShoesShop.BUS
         {
             if (daoGiay.SuaThongTinGiay(s))
             {
-                MessageBox.Show("Sửa thông tin sản phẩm thành công");
+                MessageBox.Show("Sửa thông tin sản phẩm thành công",
+                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Sửa thông tin sản phẩm không thành công");
+                MessageBox.Show("Sửa thông tin sản phẩm thất bại",
+                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -58,11 +62,13 @@ namespace ShoesShop.BUS
         {
             if (daoGiay.XoaThongTinGiay(maGiay))
             {
-                MessageBox.Show("Xóa sản phẩm thành công");
+                MessageBox.Show("Xóa sản phẩm thành công",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Xóa sản phẩm không thành công");
+                MessageBox.Show("Xóa sản phẩm không thành công",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShoesShop.BUS;
 
 namespace ShoesShop
 {
     public partial class FMenu : Form
     {
+        public string username;
+        BUS_NhanVien busNV;
+
         public FMenu()
         {
             InitializeComponent();
+            busNV = new BUS_NhanVien();
         }
 
         private void btQuanLyGiay_Click(object sender, EventArgs e)
@@ -46,12 +51,14 @@ namespace ShoesShop
         }
 
         private void btQuanLyNV_Click(object sender, EventArgs e)
-        {
+        {          
             FQuanLyNhanVien f = new FQuanLyNhanVien();
+            f.username = username;
             f.StartPosition = FormStartPosition.CenterScreen;
-            f.ShowDialog();
+            f.ShowDialog();       
         }
 
+        //Đặt hàng
         private void button1_Click(object sender, EventArgs e)
         {
             FQuanLyKhachHang f = new FQuanLyKhachHang();

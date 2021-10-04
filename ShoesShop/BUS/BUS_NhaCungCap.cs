@@ -25,11 +25,13 @@ namespace ShoesShop.BUS
         {
             if (daoNCC.ThemNhaCungCap(s))
             {
-                MessageBox.Show("Thêm nhà cung cấp mới thành công");
+                MessageBox.Show("Thêm nhà cung cấp mới thành công",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm nhà cung cấp mới thất bại");
+                MessageBox.Show("Thêm nhà cung cấp mới thất bại",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -37,11 +39,13 @@ namespace ShoesShop.BUS
         {
             if (daoNCC.SuaThongTinNhaCungCap(s))
             {
-                MessageBox.Show("Sửa thông tin nhà cung cấp thành công");
+                MessageBox.Show("Sửa thông tin nhà cung cấp thành công",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Sửa thông tin nhà cung cấp thất bại");
+                MessageBox.Show("Sửa thông tin nhà cung cấp thất bại",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -49,11 +53,13 @@ namespace ShoesShop.BUS
         {
             if (daoNCC.XoaNhaCungCap(maNCC))
             {
-                MessageBox.Show("Xóa nhà cung cấp thành công");
+                MessageBox.Show("Xóa nhà cung cấp thành công",
+                       "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Xóa nhà cung cấp thất bại");
+                MessageBox.Show("Xóa nhà cung cấp thất bại",
+                       "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

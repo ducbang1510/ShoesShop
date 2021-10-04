@@ -29,6 +29,7 @@ namespace ShoesShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -259,11 +260,11 @@ namespace ShoesShop
             // lbbanner
             // 
             this.lbbanner.AutoSize = true;
-            this.lbbanner.Font = new System.Drawing.Font("Snap ITC", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbbanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbbanner.ForeColor = System.Drawing.Color.Tomato;
             this.lbbanner.Location = new System.Drawing.Point(12, 70);
             this.lbbanner.Name = "lbbanner";
-            this.lbbanner.Size = new System.Drawing.Size(456, 82);
+            this.lbbanner.Size = new System.Drawing.Size(393, 73);
             this.lbbanner.TabIndex = 4;
             this.lbbanner.Text = "Shoes Shop";
             // 
@@ -294,12 +295,15 @@ namespace ShoesShop
             // 
             // btBaoCao
             // 
+            this.btBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btBaoCao.Location = new System.Drawing.Point(10, 181);
             this.btBaoCao.Name = "btBaoCao";
             this.btBaoCao.Size = new System.Drawing.Size(112, 44);
             this.btBaoCao.TabIndex = 7;
             this.btBaoCao.Text = "Báo cáo";
-            this.btBaoCao.UseVisualStyleBackColor = true;
+            this.btBaoCao.UseVisualStyleBackColor = false;
             this.btBaoCao.Click += new System.EventHandler(this.btBaoCao_Click);
             // 
             // FMenu
@@ -321,6 +325,7 @@ namespace ShoesShop
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMenu";

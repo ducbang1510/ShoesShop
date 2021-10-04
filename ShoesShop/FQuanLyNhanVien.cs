@@ -13,6 +13,7 @@ namespace ShoesShop
 {
     public partial class FQuanLyNhanVien : Form
     {
+        public string username;
         BUS_NhanVien busNV;
 
         public FQuanLyNhanVien()
@@ -36,7 +37,7 @@ namespace ShoesShop
             txtEmail.Text = "";
             txtSDT.Text = "";
             txtDiaChi.Text = "";
-            txtVaiTro.Text = "";
+            cbVaiTro.Text = "";
             txtTaiKhoan.Text = "";
             txtMatKhau.Text = "";
         }
@@ -49,22 +50,25 @@ namespace ShoesShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-
-            if (txtHoTen.Text == "" || txtGioiTinh.Text == "" || txtEmail.Text == ""
+            if (!busNV.isAdmin(username))
+            {
+                MessageBox.Show("Chỉ Admin mới được phép truy cập chức năng này",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtHoTen.Text == "" || txtGioiTinh.Text == "" || txtEmail.Text == ""
                 || txtSDT.Text == "" || txtVaiTro.Text == "" || txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-                if (busNV.KiemTraTenTaiKhoan(txtTaiKhoan.Text))
+            else if (busNV.KiemTraTenTaiKhoan(txtTaiKhoan.Text))
             {
                 MessageBox.Show("Tên tài khoản đã tồn tại");
                 txtTaiKhoan.Text = "";
             }
             else
             {
-                if (MessageBox.Show("Xác nhận thêm thông tin sản phẩm", "Xác nhận",
+                if (MessageBox.Show("Xác nhận thêm thông tin nhân viên", "Xác nhận",
                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Employee nv = new Employee();
@@ -74,7 +78,7 @@ namespace ShoesShop
                     nv.Email = txtEmail.Text;
                     nv.Phone = txtSDT.Text;
                     nv.Address = txtDiaChi.Text;
-                    nv.UserRole = txtVaiTro.Text;
+                    nv.UserRole = cbVaiTro.Text;
                     nv.Username = txtTaiKhoan.Text;
                     nv.Password = txtMatKhau.Text;
 
@@ -84,6 +88,17 @@ namespace ShoesShop
             }
         }
 
+
+        public bool kiemTraTaiKhoan()
+        {
+            bool ketQua = true;
+            if (txtTaiKhoan.Text != username)
+                ketQua = false;
+
+            return ketQua;
+        }
+
+
         private void btSua_Click(object sender, EventArgs e)
         {
             if (txtMaNV.Text == "")
@@ -91,9 +106,19 @@ namespace ShoesShop
                 MessageBox.Show("Vui lòng chọn nhân viên muốn sửa", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (!busNV.isMyUsername(username, int.Parse(txtMaNV.Text)))
+            {
+                MessageBox.Show("Chỉ được phép sửa thông tin của mình", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (!kiemTraTaiKhoan())
+            {
+                MessageBox.Show("Không được phép sửa tài khoản", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
-                if (MessageBox.Show("Xác nhận xóa thông tin nhân viên", "Xác nhận",
+                if (MessageBox.Show("Xác nhận sửa thông tin", "Xác nhận",
                                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Employee nv = new Employee();
@@ -102,7 +127,6 @@ namespace ShoesShop
                     nv.Email = txtEmail.Text;
                     nv.Phone = txtSDT.Text;
                     nv.Address = txtDiaChi.Text;
-                    nv.Username = txtTaiKhoan.Text;
                     nv.Password = txtMatKhau.Text;
 
                     busNV.SuaThongTinNhanVien(nv);
@@ -113,7 +137,12 @@ namespace ShoesShop
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (txtMaNV.Text == "")
+            if (!busNV.isAdmin(username))
+            {
+                MessageBox.Show("Chỉ Admin mới được phép truy cập chức năng này",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtMaNV.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn nhân viên muốn xóa", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -143,6 +172,7 @@ namespace ShoesShop
                 txtSDT.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
                 txtDiaChi.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Address"].Value.ToString();
                 txtVaiTro.Text = dGVNhanVien.Rows[e.RowIndex].Cells["UserRole"].Value.ToString();
+                cbVaiTro.Text = dGVNhanVien.Rows[e.RowIndex].Cells["UserRole"].Value.ToString();
                 txtTaiKhoan.Text = dGVNhanVien.Rows[e.RowIndex].Cells["UserName"].Value.ToString();
                 txtMatKhau.Text = dGVNhanVien.Rows[e.RowIndex].Cells["Password"].Value.ToString();
             }
@@ -168,5 +198,16 @@ namespace ShoesShop
                     e.Handled = true;
             }
         }
+
+        //hide password when dataGridView showing
+        private void dGVNhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.ColumnIndex == 9 && e.Value != null)
+            {
+                e.Value = new string('*', e.Value.ToString().Length);
+            }
+        }
+
+        
     }
 }

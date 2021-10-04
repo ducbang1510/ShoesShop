@@ -14,6 +14,7 @@ namespace ShoesShop
     public partial class FLogin : Form
     {
         BUS_NhanVien busNV;
+
         public FLogin()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace ShoesShop
                 {
                     this.Hide();
                     FMenu f = new FMenu();
+                    f.username = txtTenDangNhap.Text;
                     f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
                     this.Close();

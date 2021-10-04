@@ -29,21 +29,64 @@ namespace ShoesShop.DAO
             return ds;
         }
 
-        public void ThemDonHang(Order d)
+        public dynamic LayDSKH()
         {
-            db.Orders.Add(d);
-            db.SaveChanges();
+            var ds = db.Customers.Select(s => new
+            {
+                s.CustomerID,
+                s.FullName,
+            }).ToList();
+
+            return ds;
         }
 
-        public void SuaDonHang(Order donHang)
+        public dynamic LayDSNV()
         {
-            Order d = db.Orders.Find(donHang.OrderID);
+            var ds = db.Employees.Select(s => new
+            {
+                s.EmployeeID,
+                s.FullName,
+            }).ToList();
 
-            d.OrderDate = donHang.OrderDate;
-            d.CustomerID = donHang.CustomerID;
-            d.EmployeeID = donHang.EmployeeID;
+            return ds;
+        }
 
-            db.SaveChanges();
+        public bool ThemDonHang(Order d)
+        {
+            bool tinhTrang = true;
+
+            try
+            {
+                db.Orders.Add(d);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                tinhTrang = false;
+            }
+            return tinhTrang;
+        }
+
+        public bool SuaDonHang(Order donHang)
+        {
+            bool tinhTrang = true;
+
+            try
+            {
+                Order d = db.Orders.Find(donHang.OrderID);
+
+                d.OrderDate = donHang.OrderDate;
+                d.CustomerID = donHang.CustomerID;
+                d.EmployeeID = donHang.EmployeeID;
+
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                tinhTrang = false;
+            }
+
+            return tinhTrang;        
         }
 
         public bool XoaDonHang(int maDH)

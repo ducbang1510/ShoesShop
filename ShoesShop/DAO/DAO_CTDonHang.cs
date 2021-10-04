@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShoesShop.DAO
 {
@@ -31,15 +32,17 @@ namespace ShoesShop.DAO
             return ds;
         }
 
-        //public bool KiemTraSPDH(Order_Detail d)
-        //{
-        //    int? sl;
-        //    sl = db.sp_KiemTraSPDonHang(d.OrderID, d.ProductID).FirstOrDefault();
-        //    if (sl != 0)
-        //        return false;
-        //    else
-        //        return true;
-        //}
+        public bool KiemTraSPDH(Order_Detail d)
+        {
+            bool tinhTrang = true;
+            int? sl;
+            sl = db.sp_KiemTraSPDonHang(d.OrderID, d.ShoesID).FirstOrDefault();
+
+            if (sl == 1)
+                tinhTrang = false;
+
+            return tinhTrang;
+        }
 
         public void ThemCTDonHang(Order_Detail d)
         {

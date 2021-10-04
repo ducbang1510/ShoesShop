@@ -29,6 +29,7 @@ namespace ShoesShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FBaoCaoSanPham));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -49,8 +50,9 @@ namespace ShoesShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FBaoCaoSanPham";
-            this.Text = "FBaoCaoSanPham";
+            this.Text = "Báo cáo sản phẩm";
             this.ResumeLayout(false);
 
         }

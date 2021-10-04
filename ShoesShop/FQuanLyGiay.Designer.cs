@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQuanLyGiay));
             this.label2 = new System.Windows.Forms.Label();
-            this.btThamAnh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numSize = new System.Windows.Forms.NumericUpDown();
             this.cbNCC = new System.Windows.Forms.ComboBox();
@@ -50,15 +49,11 @@
             this.btThem = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dGVGiay = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picturePhim = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSize)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVGiay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePhim)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -66,23 +61,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.Location = new System.Drawing.Point(117, 89);
+            this.label2.Location = new System.Drawing.Point(52, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(296, 51);
             this.label2.TabIndex = 4;
             this.label2.Text = "Quản Lý Giày";
-            // 
-            // btThamAnh
-            // 
-            this.btThamAnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btThamAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThamAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThamAnh.Location = new System.Drawing.Point(678, 470);
-            this.btThamAnh.Name = "btThamAnh";
-            this.btThamAnh.Size = new System.Drawing.Size(220, 45);
-            this.btThamAnh.TabIndex = 9;
-            this.btThamAnh.Text = "Thêm hình ảnh";
-            this.btThamAnh.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -149,6 +132,7 @@
             this.txtSoLuongTon.Name = "txtSoLuongTon";
             this.txtSoLuongTon.Size = new System.Drawing.Size(206, 24);
             this.txtSoLuongTon.TabIndex = 2;
+            this.txtSoLuongTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongTon_KeyPress);
             // 
             // txtGia
             // 
@@ -157,6 +141,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(206, 24);
             this.txtGia.TabIndex = 2;
+            this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongTon_KeyPress);
             // 
             // txtTenGiay
             // 
@@ -305,31 +290,12 @@
             this.dGVGiay.TabIndex = 4;
             this.dGVGiay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVGiay_CellClick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ShoesShop.Properties.Resources.checklist;
-            this.pictureBox1.Location = new System.Drawing.Point(682, 530);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 157);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picturePhim
-            // 
-            this.picturePhim.Location = new System.Drawing.Point(678, 219);
-            this.picturePhim.Name = "picturePhim";
-            this.picturePhim.Size = new System.Drawing.Size(221, 237);
-            this.picturePhim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturePhim.TabIndex = 8;
-            this.picturePhim.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Image = global::ShoesShop.Properties.Resources.logo3;
-            this.label1.Location = new System.Drawing.Point(409, 9);
+            this.label1.Location = new System.Drawing.Point(342, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(490, 196);
+            this.label1.Size = new System.Drawing.Size(302, 196);
             this.label1.TabIndex = 2;
             // 
             // FQuanLyGiay
@@ -337,13 +303,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(911, 693);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(678, 693);
             this.Controls.Add(this.dGVGiay);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btThamAnh);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.picturePhim);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -360,8 +323,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSize)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVGiay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePhim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,8 +331,6 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picturePhim;
-        private System.Windows.Forms.Button btThamAnh;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown numSize;
         private System.Windows.Forms.ComboBox cbNCC;
@@ -391,6 +350,5 @@
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dGVGiay;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

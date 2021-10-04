@@ -29,6 +29,7 @@ namespace ShoesShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQuanLyBaoCao));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mSISanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.baToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +67,9 @@ namespace ShoesShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 281);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FQuanLyBaoCao";
-            this.Text = "FQuanLyBaoCao";
+            this.Text = "Quản lý báo cáo";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

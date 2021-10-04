@@ -25,7 +25,7 @@ namespace ShoesShop
         public int SupplierID { get; set; }
         public int QuantityRemaining { get; set; }
         public decimal UnitPrice { get; set; }
-        public Nullable<bool> Discontinued { get; set; }
+        public bool Discontinued { get; set; }
         public byte[] Image { get; set; }
         public string ImagePath { get; set; }
         public int Size { get; set; }

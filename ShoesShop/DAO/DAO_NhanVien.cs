@@ -16,6 +16,32 @@ namespace ShoesShop.DAO
             db = new ShoesShopDBEntities();
         }
 
+        //check isAdmin
+        public bool isAdmin(string username)
+        {
+            bool ketQua = false;
+
+            Employee e = db.Employees.FirstOrDefault(s => s.Username == username);
+
+            if (e.UserRole == "Admin")
+                return true;
+
+            return ketQua;
+        }
+
+        //check isMyUsername
+        public bool isMyUsername(string username, int maNV)
+        {
+            bool ketQua = false;
+
+            Employee e = db.Employees.FirstOrDefault(s => s.EmployeeID == maNV);
+
+            if (e.Username == username)
+                ketQua = true;
+
+            return ketQua;
+        }
+
         public dynamic LayDSNhanVien2() // Data for ComboBox
         {
             dynamic ds = db.Employees.Select(e => new
@@ -73,7 +99,6 @@ namespace ShoesShop.DAO
                 e.Phone = nv.Phone;
                 e.Email = nv.Email;
                 e.Address = nv.Address;
-                e.Username = nv.Username;
                 e.Password = nv.Password;
 
                 db.SaveChanges();

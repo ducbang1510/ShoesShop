@@ -34,11 +34,13 @@ namespace ShoesShop.BUS
         {
             if (daoKH.ThemKhachHang(c))
             {
-                MessageBox.Show("Thêm khách hàng mới thành công");
+                MessageBox.Show("Thêm khách hàng mới thành công", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm khách hàng thất bại");
+                MessageBox.Show("Thêm khách hàng thất bại", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -46,11 +48,13 @@ namespace ShoesShop.BUS
         {
             if (daoKH.SuaThongTinKhachHang(c))
             {
-                MessageBox.Show("Sửa thông tin khách hàng thành công");
+                MessageBox.Show("Sửa thông tin khách hàng thành công", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Sửa thông tin khách hàng thất bại");
+                MessageBox.Show("Sửa thông tin khách hàng thất bại", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -58,11 +62,13 @@ namespace ShoesShop.BUS
         {
             if (daoKH.XoaThongTinKhachHang(maKH))
             {
-                MessageBox.Show("Xóa thông tin khách hàng thành công");
+                MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Xóa thông tin khách hàng thất bại");
+                MessageBox.Show("Xóa thông tin khách hàng thất bại", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

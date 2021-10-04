@@ -12,6 +12,8 @@ namespace ShoesShop
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ShoesShopDBEntities : DbContext
     {
@@ -31,5 +33,18 @@ namespace ShoesShop
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Sho> Shoes { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> sp_KiemTraSPDonHang(Nullable<int> maDH, Nullable<int> maSP)
+        {
+            var maDHParameter = maDH.HasValue ?
+                new ObjectParameter("MaDH", maDH) :
+                new ObjectParameter("MaDH", typeof(int));
+    
+            var maSPParameter = maSP.HasValue ?
+                new ObjectParameter("MaSP", maSP) :
+                new ObjectParameter("MaSP", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_KiemTraSPDonHang", maDHParameter, maSPParameter);
+        }
     }
 }

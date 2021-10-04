@@ -58,22 +58,23 @@ namespace ShoesShop.BUS
                         d.ShoesID = int.Parse(item[0].ToString());
                         d.UnitPrice = decimal.Parse(item[2].ToString());
                         d.Quantity = short.Parse(item[3].ToString());
-                        daoCTDH.ThemCTDonHang(d);
-                        //if (dCTDonHang.KiemTraSPDH(d))
-                        //{
-                        //    dCTDonHang.ThemCTDH(d);
-                        //}
-                        //else
-                        //{
-                        //    throw new Exception("Sản phẩm đã tồn tại " + d.ProductID);
-                        //}
+
+                        if (daoCTDH.KiemTraSPDH(d))
+                        {
+                            daoCTDH.ThemCTDonHang(d);
+                        }
+                        else
+                        {
+                            throw new Exception("Sản phẩm đã tồn tại, vui lòng thử lại" + d.ShoesID);
+                        }
                     }
+
                     tran.Complete();
                     ketQua = true;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ketQua = false;
                 }
             }
@@ -85,11 +86,13 @@ namespace ShoesShop.BUS
         {
             if (daoCTDH.SuaCTDonHang(d))
             {
-                MessageBox.Show("Sửa chi tiết đơn hàng thành công");
+                MessageBox.Show("Sửa chi tiết đơn hàng thành công",
+                       "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không thấy chi tiết đơn hàng để sửa");
+                MessageBox.Show("Sửa chi tiết đơn hàng thất bại",
+                          "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -97,11 +100,13 @@ namespace ShoesShop.BUS
         {
             if (daoCTDH.XoaCTDonHang(maDH, maGiay))
             {
-                MessageBox.Show("Xóa CTDH thành công");
+                MessageBox.Show("Xóa CTDH thành công",
+                          "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Xóa CTDH không thành công");
+                MessageBox.Show("Xóa CTDH thất bại",
+                          "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

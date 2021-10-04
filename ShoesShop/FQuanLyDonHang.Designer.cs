@@ -29,6 +29,7 @@ namespace ShoesShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQuanLyDonHang));
             this.hoTenNhanVienLabel = new System.Windows.Forms.Label();
             this.ngaySinhLabel = new System.Windows.Forms.Label();
             this.diaChiLabel = new System.Windows.Forms.Label();
@@ -37,7 +38,9 @@ namespace ShoesShop
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.cbKhachHang = new System.Windows.Forms.ComboBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtMaDH = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.dtpNgayDatHang = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayDonHang = new System.Windows.Forms.DateTimePicker();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -57,8 +60,6 @@ namespace ShoesShop
             this.gVDH = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVDH)).BeginInit();
             this.SuspendLayout();
@@ -154,6 +155,15 @@ namespace ShoesShop
             this.cbKhachHang.Size = new System.Drawing.Size(230, 26);
             this.cbKhachHang.TabIndex = 11;
             // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Location = new System.Drawing.Point(131, 114);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(230, 24);
+            this.txtTongTien.TabIndex = 10;
+            // 
             // txtMaDH
             // 
             this.txtMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,6 +172,16 @@ namespace ShoesShop
             this.txtMaDH.Name = "txtMaDH";
             this.txtMaDH.Size = new System.Drawing.Size(230, 24);
             this.txtMaDH.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Tổng tiền:";
             // 
             // dtpNgayDatHang
             // 
@@ -332,25 +352,6 @@ namespace ShoesShop
             this.label2.Size = new System.Drawing.Size(343, 185);
             this.label2.TabIndex = 15;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tổng tiền:";
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(131, 114);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(230, 24);
-            this.txtTongTien.TabIndex = 10;
-            // 
             // FQuanLyDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +367,7 @@ namespace ShoesShop
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btThem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FQuanLyDonHang";

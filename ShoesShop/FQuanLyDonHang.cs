@@ -20,6 +20,14 @@ namespace ShoesShop
             busDH = new BUS_DonHang();
         }
 
+        public void CapNhatForm()
+        {
+            txtMaDH.Text = "";
+            cbNhanVien.Text = "";
+            cbKhachHang.Text = "";
+            txtTongTien.Text = "";
+        }
+
         private void HienThiDSDonHang()
         {
             gVDH.DataSource = null;
@@ -33,53 +41,93 @@ namespace ShoesShop
 
         private void FQuanLyDonHang_Load(object sender, EventArgs e)
         {
+            busDH.LayDSKH(cbKhachHang);
+            busDH.LayDSNV(cbNhanVien);
             HienThiDSDonHang();
+        }
+
+        //kiểm tra ngày hiện tại
+        public bool isToday()
+        {
+            return dtpNgayDatHang.Value.ToShortDateString().ToString() == DateTime.Today.ToShortDateString().ToString();
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            Order d = new Order();
-
-            d.CustomerID = int.Parse(cbKhachHang.SelectedValue.ToString());
-            d.EmployeeID = int.Parse(cbNhanVien.SelectedValue.ToString());
-            d.OrderDate = dtpNgayDatHang.Value;
-            d.TotalPrice = decimal.Parse(txtTongTien.Text);
-
-            if (busDH.ThemDonHang(d))
+            if (!isToday())
             {
-                MessageBox.Show("Tạo đơn hàng thành công");
-                HienThiDSDonHang();
+                MessageBox.Show("Ngày không hợp lệ", "Thông báo",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dtpNgayDatHang.Value = DateTime.Today;
             }
             else
-            {
-                MessageBox.Show("Tạo đơn hàng thất bại");
-            }
+                if (txtTongTien.Text == "" || cbNhanVien.Text == "" ||
+                    cbKhachHang.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi thêm", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (MessageBox.Show("Xác nhận thêm thông tin đơn hàng", "Xác nhận",
+                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Order d = new Order();
+
+                        d.CustomerID = int.Parse(cbKhachHang.SelectedValue.ToString());
+                        d.EmployeeID = int.Parse(cbNhanVien.SelectedValue.ToString());
+                        d.OrderDate = dtpNgayDatHang.Value;
+                        d.TotalPrice = decimal.Parse(txtTongTien.Text);
+
+                        busDH.ThemDonHang(d);
+                        HienThiDSDonHang();
+                    }
+                }
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            Order d = new Order();
+            if (txtMaDH.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn đơn hàng muốn sửa", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("Xác nhận sửa thông tin đơn hàng", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Order d = new Order();
 
-            d.OrderID = int.Parse(txtMaDH.Text);
-            d.OrderDate = dtpNgayDatHang.Value;
-            d.CustomerID = int.Parse(cbKhachHang.SelectedValue.ToString());
-            d.EmployeeID = int.Parse(cbNhanVien.SelectedValue.ToString());
+                    d.OrderID = int.Parse(txtMaDH.Text);
+                    d.OrderDate = dtpNgayDatHang.Value;
+                    d.CustomerID = int.Parse(cbKhachHang.SelectedValue.ToString());
+                    d.EmployeeID = int.Parse(cbNhanVien.SelectedValue.ToString());
 
-            busDH.SuaDonHang(d);
-            busDH.HienThiDSDonHang(gVDH);
+                    busDH.SuaDonHang(d);
+                    busDH.HienThiDSDonHang(gVDH);
+                    CapNhatForm();
+                }
+            }        
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
             if (txtMaDH.Text != "")
             {
-                busDH.XoaDonHang(Int32.Parse(txtMaDH.Text));
-                busDH.HienThiDSDonHang(gVDH);
+                if (MessageBox.Show("Xác nhận xóa đơn hàng", "Xác nhận",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    busDH.XoaDonHang(Int32.Parse(txtMaDH.Text));
+                    busDH.HienThiDSDonHang(gVDH);
+                    CapNhatForm();
+                }    
             }
             else
             {
-                MessageBox.Show("Chưa chọn đơn hàng để xóa");
-            }
+                MessageBox.Show("Chưa chọn đơn hàng để xóa", "Thông báo",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }          
         }
 
         private void gVDH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -103,6 +151,6 @@ namespace ShoesShop
             FChiTietDonHang c = new FChiTietDonHang();
             c.maDH = maDH;
             c.ShowDialog();
-        }
+        }  
     }
 }

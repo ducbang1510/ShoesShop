@@ -23,50 +23,60 @@ namespace ShoesShop.BUS
             dg.DataSource = daoDH.LayDSDonHang();
         }
 
-        public bool ThemDonHang(Order d)
+        public void LayDSKH(ComboBox cb)
         {
-            try
+            cb.DataSource = daoDH.LayDSKH();
+            cb.DisplayMember = "FullName";
+            cb.ValueMember = "CustomerID";
+        }
+
+        public void LayDSNV(ComboBox cb)
+        {
+            cb.DataSource = daoDH.LayDSNV();
+            cb.DisplayMember = "FullName";
+            cb.ValueMember = "EmployeeID";
+        }
+
+        public void ThemDonHang(Order d)
+        {
+            if (daoDH.ThemDonHang(d))
             {
-                daoDH.ThemDonHang(d);
-                return true;
+                MessageBox.Show("Thêm đơn hàng thành công", "Thông báo",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            else
             {
-                return false;
-            }
+                MessageBox.Show("Thêm đơn hàng thất bại", "Thông báo",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }   
         }
 
         public void XoaDonHang(int maDH)
         {
             if (daoDH.XoaDonHang(maDH))
             {
-                MessageBox.Show("Xóa đơn hàng thành công");
+                MessageBox.Show("Xóa đơn hàng thành công", "Thông báo",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không thấy đơn hàng để xóa");
+                MessageBox.Show("Xóa đơn hàng thất bại", "Thông báo",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        public bool SuaDonHang(Order donHang)
+        public void SuaDonHang(Order donHang)
         {
-            //if (daoDH.KTDonHang(donHang))
-            //{
-            try
+            if (daoDH.SuaDonHang(donHang))
             {
-                daoDH.SuaDonHang(donHang);
-                return true;
+                MessageBox.Show("Sửa đơn hàng thành công", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (DbUpdateException ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-            //}
-            //else
-            //{
-            //    return false;
-            //}
+                MessageBox.Show("Sửa đơn hàng thất bại", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
         }
 
         public List<Order> LayDSDonHangReport()

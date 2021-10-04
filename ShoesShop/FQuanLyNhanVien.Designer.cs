@@ -33,6 +33,7 @@
             this.dGVNhanVien = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.grTTNV = new System.Windows.Forms.GroupBox();
+            this.cbVaiTro = new System.Windows.Forms.ComboBox();
             this.btXoa = new System.Windows.Forms.Button();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btSua = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtVaiTro = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -56,6 +56,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtVaiTro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -69,6 +70,7 @@
             this.panel2.Controls.Add(this.dGVNhanVien);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.grTTNV);
+            this.panel2.Controls.Add(this.txtVaiTro);
             this.panel2.Location = new System.Drawing.Point(12, 203);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(832, 468);
@@ -82,6 +84,7 @@
             this.dGVNhanVien.Size = new System.Drawing.Size(800, 199);
             this.dGVNhanVien.TabIndex = 9;
             this.dGVNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVNhanVien_CellClick);
+            this.dGVNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dGVNhanVien_CellFormatting);
             // 
             // label10
             // 
@@ -96,6 +99,7 @@
             // grTTNV
             // 
             this.grTTNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grTTNV.Controls.Add(this.cbVaiTro);
             this.grTTNV.Controls.Add(this.btXoa);
             this.grTTNV.Controls.Add(this.dtpNgaySinh);
             this.grTTNV.Controls.Add(this.btSua);
@@ -106,7 +110,6 @@
             this.grTTNV.Controls.Add(this.label12);
             this.grTTNV.Controls.Add(this.label11);
             this.grTTNV.Controls.Add(this.label8);
-            this.grTTNV.Controls.Add(this.txtVaiTro);
             this.grTTNV.Controls.Add(this.txtDiaChi);
             this.grTTNV.Controls.Add(this.label6);
             this.grTTNV.Controls.Add(this.txtSDT);
@@ -126,6 +129,20 @@
             this.grTTNV.TabIndex = 5;
             this.grTTNV.TabStop = false;
             this.grTTNV.Text = "Thông tin nhân viên:";
+            // 
+            // cbVaiTro
+            // 
+            this.cbVaiTro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVaiTro.FormattingEnabled = true;
+            this.cbVaiTro.Items.AddRange(new object[] {
+            "Nhân Viên",
+            "Admin"});
+            this.cbVaiTro.Location = new System.Drawing.Point(431, 140);
+            this.cbVaiTro.Name = "cbVaiTro";
+            this.cbVaiTro.Size = new System.Drawing.Size(251, 26);
+            this.cbVaiTro.TabIndex = 10;
+
             // 
             // btXoa
             // 
@@ -169,6 +186,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(431, 175);
             this.txtMatKhau.MaxLength = 10;
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(251, 24);
             this.txtMatKhau.TabIndex = 5;
             // 
@@ -199,7 +217,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(91, 97);
-            this.txtEmail.MaxLength = 10;
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(251, 24);
             this.txtEmail.TabIndex = 5;
@@ -234,14 +252,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Email:";
             // 
-            // txtVaiTro
-            // 
-            this.txtVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVaiTro.Location = new System.Drawing.Point(431, 140);
-            this.txtVaiTro.Name = "txtVaiTro";
-            this.txtVaiTro.Size = new System.Drawing.Size(251, 24);
-            this.txtVaiTro.TabIndex = 6;
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,7 +274,7 @@
             // 
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(431, 103);
-            this.txtSDT.MaxLength = 9;
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(251, 24);
             this.txtSDT.TabIndex = 4;
@@ -303,7 +313,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(9, 145);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 16);
+            this.label9.Size = new System.Drawing.Size(59, 16);
             this.label9.TabIndex = 0;
             this.label9.Text = "Địa chỉ:";
             // 
@@ -313,7 +323,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(357, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "SĐT:";
             // 
@@ -355,6 +365,14 @@
             this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã NV:";
+            // 
+            // txtVaiTro
+            // 
+            this.txtVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVaiTro.Location = new System.Drawing.Point(170, 227);
+            this.txtVaiTro.Name = "txtVaiTro";
+            this.txtVaiTro.Size = new System.Drawing.Size(251, 24);
+            this.txtVaiTro.TabIndex = 6;
             // 
             // label2
             // 
@@ -434,5 +452,6 @@
         private System.Windows.Forms.TextBox txtVaiTro;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbVaiTro;
     }
 }

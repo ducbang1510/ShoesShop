@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShoesShop.DAO
 {
@@ -28,7 +29,7 @@ namespace ShoesShop.DAO
 
         public dynamic LayDSSanPham()
         {
-            var ds = db.Shoes.Select(s => new
+            dynamic ds = db.Shoes.Select(s => new
             {
                 s.ShoesID,
                 s.ShoesName,

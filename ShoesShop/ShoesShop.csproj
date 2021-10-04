@@ -316,8 +316,8 @@
     <Content Include="Resources\Vans-Logo-van-shoes-9511282-250-250.jpg" />
     <Content Include="ShoesShopDBEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ShoesShopDBEntity.Context.cs</LastGenOutput>
       <DependentUpon>ShoesShopDBEntity.edmx</DependentUpon>
+      <LastGenOutput>ShoesShopDBEntity.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ShoesShopDBEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
